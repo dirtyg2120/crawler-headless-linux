@@ -1,0 +1,16 @@
+# Get in virtual environment
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\venv\Scripts\activate
+
+# render data to csv / json
+scrapy crawl monthly -o items.json
+scrapy crawl monthly -o items.csv
+
+# run celery worker
+celery -A tasks worker --loglevel=info
+
+# run scheduled tasks
+celery -A tasks beat
+
+# crawl with search place and time (4 months in example below)
+scrapy crawl monthly -a key='Quận Tân Bình' -a period='2021-6 2021-7' -o items.json
