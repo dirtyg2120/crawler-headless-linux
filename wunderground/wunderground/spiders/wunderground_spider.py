@@ -7,8 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.options import Options
 
-# from easyprocess import EasyProcess
-# from pyvirtualdisplay import Display
 from wunderground import items
 import time
 
@@ -24,7 +22,7 @@ class WundergroundSpider(Spider):
         self.key = key
         self.start = period.split(' ')[0]
         self.end = period.split(' ')[1]
-        PATH = "/home/dirtyg/ARI/simple-web-crawler/geckodriver"
+        PATH = "../geckodriver"
         firefox_options = Options()
         firefox_options.add_argument("--headless")
         # self.display = Display(visible=False, size=(800, 600))
