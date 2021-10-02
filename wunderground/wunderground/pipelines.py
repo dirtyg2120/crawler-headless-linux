@@ -5,17 +5,17 @@
 
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
+# from itemadapter import ItemAdapter
 import pymongo
 from wunderground import settings
-from scrapy.exceptions import DropItem
+# from scrapy.exceptions import DropItem
 import logging
 
 class WundergroundPipeline:
     def __init__(self):
         connection = pymongo.MongoClient(
-            settings.MONGODB_SERVER,
-            settings.MONGODB_PORT
+            host='mongodb',
+            port=27017
         )
         db = connection[settings.MONGODB_DB]
         self.collection = db[settings.MONGODB_COLLECTION]

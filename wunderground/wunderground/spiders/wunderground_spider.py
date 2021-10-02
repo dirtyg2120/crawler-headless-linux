@@ -22,7 +22,7 @@ class WundergroundSpider(Spider):
         self.key = key
         self.start = period.split(' ')[0]
         self.end = period.split(' ')[1]
-        PATH = "../geckodriver"
+        PATH = "./geckodriver"
         firefox_options = Options()
         firefox_options.add_argument("--headless")
         # self.display = Display(visible=False, size=(800, 600))

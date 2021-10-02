@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = 'wunderground.spiders'
 
 ITEM_PIPELINES = {'wunderground.pipelines.WundergroundPipeline':300}
 
-MONGODB_SERVER = "localhost"
+MONGODB_SERVER = "mongodb"
 MONGODB_PORT = 27017
 MONGODB_DB = "wunderground"
 MONGODB_COLLECTION = "history"
